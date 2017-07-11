@@ -1,0 +1,84 @@
+.feature {
+	background-color: $section;
+	padding: 5rem 0;
+}
+
+.feature-descr {
+	margin-bottom: 6rem;
+}
+
+.feature-items {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 3.6rem;
+	@include phone {
+		flex-wrap: wrap;
+	}
+}
+
+.item {
+	background-color: $white;
+	display: flex;
+	flex-direction: column;
+	width: calc(33.3% - 2rem);
+	@include phone {
+		margin-bottom: 3rem;
+		width: 100%;
+	}
+}
+
+.item__pic {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	height: 27.5rem;
+}
+
+.item__descr {
+	padding: 0 2.5rem 1.5rem;
+}
+
+.item__title {
+	margin-bottom: 0.5rem;
+}
+
+.item__rating {
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.item__star {
+	color: #ffc600;
+	font-size: 1.8rem;
+	&:not(:last-child) {
+		margin-right: 0.9rem;
+	}
+}
+
+.dots {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.dot {
+	background-color: $descr-font;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 0.9rem;
+	width: 0.9rem;
+	&:not(:last-child) {
+		margin-right: 2rem;
+	}
+}
+
+.dot:hover {
+	background-color: $blue;
+	transition: all 0.4s;
+}
+
+.dots .active {
+	background-color: $blue;
+	height: 1.1rem;
+	width: 1.1rem;
+}

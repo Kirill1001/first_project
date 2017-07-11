@@ -1,0 +1,111 @@
+.header {
+	background-color: rgba(0, 0, 0, .6);
+	padding: 1.5rem 0;
+	position: absolute;
+	width: 100%;
+}
+
+.header-flex {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo a {
+	color: $white;
+	font-size: 2.5rem;
+	font-weight: $bold;
+}
+
+.logo a span {
+	color: $blue;
+}
+
+.nav {
+	display: flex;
+	@include phone {
+		display: none;
+	}
+}
+
+.nav__item {
+	&:not(:last-child) {
+		margin-right: 3rem;
+	}
+}
+
+.nav__item .active {
+	color: $blue;
+}
+
+.nav__link {
+	color: $gray;
+	font-size: 1.3rem;
+	font-weight: $bold;
+
+	&:hover {
+		color: $blue;
+	}
+}
+
+.account {
+	display: flex;
+	align-items: center;
+}
+
+.account__cart {
+	position: relative;
+	margin-right: 3rem;
+	@include phone {
+		margin-right: 1.5rem;
+	}
+}
+
+.account__cart a {
+	color: $gray;
+	font-size: 2.4rem;
+}
+
+.account__cart .account__badge {
+	display: block;
+	background-color: $pink;
+	border-radius: 50%;
+	color: $white;
+	font-size: 0.6rem;
+	line-height: 1.2rem;
+	height: 1.2rem;
+	position: absolute;
+	top: 0.6rem;
+	right: -0.4rem;
+	text-align: center;
+	vertical-align: middle;
+	width: 1.2rem;
+}
+
+.account__btn {
+	color: $gray;
+	border: 1px solid $gray;
+	border-radius: 3px;
+	font-size: 1.2rem;
+	padding: 0.5rem 1rem;
+
+	&::after {
+		content: '\f107';
+		font-family: Fontawesome;
+		margin-left: 1.8rem;
+	}
+}
+
+.account__btn:hover {
+	color: $white;
+	border-color: $white;
+}
+
+.phone-menu {
+	display: none;
+	@include phone {
+		display: block;
+		color: $white;
+		font-size: 2.4rem;
+	}
+}

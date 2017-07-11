@@ -1,0 +1,163 @@
+.footer {
+	background-color: $section;
+}
+
+.border-bottom {
+	border-bottom: 1px dotted #bdc2cd;
+	padding: 5rem 0 6rem;
+}
+
+.site-info .title,
+.site-link .title,
+.sign-up .title {
+	color: $blue;
+	font-size: 1.5rem;
+	font-weight: $bold;
+	text-transform: uppercase;
+}
+
+.site-info .title {
+	display: block;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	text-transform: none;
+}
+
+.site-info p,
+.site-link li a {
+	color: #8793b3;
+}
+
+.site-info p {
+	font-size: 1.4rem;
+	line-height: 1.5;
+}
+
+.site-link .title {
+	margin-bottom: 1rem;
+}
+
+.site-link li {
+	margin-bottom: 0.7rem;
+}
+
+.site-link li a {
+	font-size: 1.3rem;
+}
+
+.site-link li a:hover {
+	color: #677ebe;
+}
+
+.sign-up .title {
+	margin-bottom: 2rem;
+}
+
+.sign-up input[type="email"],
+.sign-up input[type="password"] {
+	background-color: $section;
+	border: 1px solid transparent;
+	border-bottom-color: #bdc2cd;
+	display: block;
+	margin-bottom: 1rem;
+	padding: 0.5rem 0;
+	width: 100%;
+	&::-webkit-input-placeholder {
+		color:#abb3c6;
+	}
+	&::-moz-placeholder {
+		color:#abb3c6;
+	}
+	&:-ms-input-placeholder {
+		color:#abb3c6;
+	}
+}
+
+.sign-up input[type="password"] {
+	margin-bottom: 2rem;
+}
+
+.sign-up input[type="email"]:focus,
+.sign-up input[type="password"]:focus {
+	outline: none;
+}
+
+.sign-up input[type="submit"] {
+	background-color: $blue;
+	border-color: transparent;
+	border-radius: 3px;
+	color: $white;
+	cursor: pointer;
+	outline: none;
+	padding: 0.7rem 0;
+	width: 100%;
+}
+
+.copyright {
+	display: flex;
+	padding: 2rem 0;
+	@include phone {
+		flex-direction: column;
+	}
+}
+
+.social {
+	display: flex;
+	@include phone {
+		margin: 0 auto 3rem;
+	}
+}
+
+.social li {
+	&:not(:last-child) {
+		margin-right: 2rem;
+	}
+}
+
+.social li a {
+	background-color: #d9deea;
+	display: block;
+	color: $descr-font;
+	font-size: 1.2rem;
+	line-height: 1.4rem;
+	height: 1.4rem;
+	position: relative;
+	text-align: center;
+	width: 2.4rem;
+}
+
+.social li a::before {
+	content: '';
+	position: absolute;
+	top: -8px; 
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 8px solid #d9deea;
+}
+
+.social li a::after {
+	content: '';
+	position: absolute;
+	bottom: -8px; 
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 8px solid #d9deea;
+}
+
+.social li a:hover {
+	color: #3673ff;
+}
+
+.copyright p {
+	color: #c8cede;
+	margin-left: auto;
+	@include phone {
+		margin: 0 auto;
+	}
+}

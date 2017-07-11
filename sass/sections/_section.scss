@@ -1,0 +1,37 @@
+.margin-phone {
+	@include phone {
+		margin-bottom: 3rem;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+.section-title {
+	color: $title-font;
+	font-size: 2rem;
+	font-weight: $bold;
+	margin-bottom: 0.5rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.section-descr {
+	color: $descr-font;
+	font-size: 1.4rem;
+	font-weight: $medium;
+	margin-bottom: 1rem;
+}
+
+.section-subtitle {
+	color: $title-font;
+	font-size: 1.6rem;
+	font-weight: $bold;
+}
+
+.section-price {
+	color: $blue;
+	font-size: 1.7rem;
+	font-weight: $bold;
+}
