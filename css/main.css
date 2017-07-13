@@ -273,7 +273,8 @@ footer {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 0 3.6rem; }
+  padding-bottom: 3.6rem;
+  position: relative; }
   @media screen and (max-width: 576px) {
     .feature-items {
       -webkit-flex-wrap: wrap;
@@ -290,9 +291,7 @@ footer {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column;
-  width: -webkit-calc(33.3% - 2rem);
-  width: calc(33.3% - 2rem); }
+          flex-direction: column; }
   @media screen and (max-width: 576px) {
     .item {
       margin-bottom: 3rem;
@@ -332,7 +331,7 @@ footer {
   .item__star:not(:last-child) {
     margin-right: 0.9rem; }
 
-.dots {
+.owl-dots {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -344,24 +343,30 @@ footer {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  position: absolute;
+  margin: auto;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 1.1rem; }
 
-.dot {
+.owl-dot {
   background-color: #64759f;
   -webkit-border-radius: 50%;
           border-radius: 50%;
   cursor: pointer;
   height: 0.9rem;
   width: 0.9rem; }
-  .dot:not(:last-child) {
+  .owl-dot:not(:last-child) {
     margin-right: 2rem; }
 
-.dot:hover {
+.owl-dot:hover {
   background-color: #36c2ff;
   -webkit-transition: all 0.4s;
   transition: all 0.4s; }
 
-.dots .active {
+.owl-dots .active {
   background-color: #36c2ff;
   height: 1.1rem;
   width: 1.1rem; }

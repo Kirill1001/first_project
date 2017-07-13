@@ -10,7 +10,8 @@
 .feature-items {
 	display: flex;
 	justify-content: space-between;
-	margin: 0 0 3.6rem;
+	padding-bottom: 3.6rem;
+	position: relative;
 	@include phone {
 		flex-wrap: wrap;
 	}
@@ -20,7 +21,7 @@
 	background-color: $white;
 	display: flex;
 	flex-direction: column;
-	width: calc(33.3% - 2rem);
+	//width: calc(33.3% - 2rem);
 	@include phone {
 		margin-bottom: 3rem;
 		width: 100%;
@@ -55,13 +56,19 @@
 	}
 }
 
-.dots {
+.owl-dots {
 	align-items: center;
 	display: flex;
 	justify-content: center;
+	position: absolute;
+	margin: auto;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 1.1rem;
 }
 
-.dot {
+.owl-dot {
 	background-color: $descr-font;
 	border-radius: 50%;
 	cursor: pointer;
@@ -72,12 +79,12 @@
 	}
 }
 
-.dot:hover {
+.owl-dot:hover {
 	background-color: $blue;
 	transition: all 0.4s;
 }
 
-.dots .active {
+.owl-dots .active {
 	background-color: $blue;
 	height: 1.1rem;
 	width: 1.1rem;
