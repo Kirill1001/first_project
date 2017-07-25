@@ -139,10 +139,24 @@ footer {
   display: flex; }
   @media screen and (max-width: 576px) {
     .nav {
-      display: none; } }
+      display: none;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 3rem;
+      width: 100%;
+      z-index: 5; } }
 
 .nav__item:not(:last-child) {
   margin-right: 3rem; }
+
+@media screen and (max-width: 576px) {
+  .nav__item {
+    display: block;
+    text-align: center; }
+    .nav__item:not(:last-child) {
+      margin: 0 0 3rem 0; } }
 
 .nav__item .active {
   color: #36c2ff; }
@@ -153,6 +167,9 @@ footer {
   font-weight: 700; }
   .nav__link:hover {
     color: #36c2ff; }
+  @media screen and (max-width: 576px) {
+    .nav__link {
+      font-size: 1.7rem; } }
 
 .account {
   display: -webkit-box;

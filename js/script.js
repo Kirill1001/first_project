@@ -17,3 +17,15 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
+
+
+//Phone-menu
+$('.phone-menu').on('click', function() {
+
+    $('.nav').slideToggle(300, function() {
+        if ($(this).css('display') === 'none') {
+            $(this).removeAttr('style');
+        }
+    });
+
+});

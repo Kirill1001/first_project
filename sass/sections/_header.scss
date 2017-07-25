@@ -24,14 +24,28 @@
 .nav {
 	display: flex;
 	@include phone {
-		display: none;
+	  display: none;
+	  background-color: rgba(0, 0, 0, .8);
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  padding: 3rem;
+	  width: 100%;
+	  z-index: 5;
 	}
 }
 
 .nav__item {
+  &:not(:last-child) {
+	margin-right: 3rem;
+  }
+  @include phone {
+	display: block;
+	text-align: center;
 	&:not(:last-child) {
-		margin-right: 3rem;
+	  margin: 0 0 3rem 0;
 	}
+  }
 }
 
 .nav__item .active {
@@ -46,6 +60,9 @@
 	&:hover {
 		color: $blue;
 	}
+	@include phone {
+	  font-size: 1.7rem;
+	}  
 }
 
 .account {
