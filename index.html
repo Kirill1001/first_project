@@ -356,11 +356,6 @@
 
 						</div>
 
-						<!--<ul class="dots">
-							<li class="dot"></li>
-							<li class="dot active"></li>
-							<li class="dot"></li>
-						</ul>-->
 						</div>
 				</section>
 
@@ -373,36 +368,28 @@
 						<p class="section-descr products-descr text-center">
 							Check out popular products in our shop!
 						</p>
-						<ul class="categories">
-							<li>
-								<a href="#" class="active">
-									all
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									mens
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									womens
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									kids
-								</a>
-							</li>
-						</ul>
+						<div class="categories">
+							<a href="#" class="all active">
+								all
+							</a>
+							<a href="#" data-cat="mens">
+								mens
+							</a>
+							<a href="#" data-cat="womens">
+								womens
+							</a>
+							<a href="#" data-cat="kids">
+								kids
+							</a>
+						</div>
 
 						<div class="products-list">
 
-							<article class="product">
+							<article class="product" data-cat="mens">
 								<a href="#" class="product__overlay">add to cart</a>
-								<div class="product__pic">
-									<a href="#"><img src="img/product/product-item1.png" class="product__img" alt=""></a>
-								</div>
+								<a href="#" class="product__pic">
+									<img src="img/product/product-item1.png" class="product__img" alt="">
+								</a>
 								<div class="product__descr">
 									<div class="product__subtitle">
 										<a href="#" class="section-subtitle">Jacket Of Prince</a>
@@ -416,11 +403,11 @@
 								</div>
 							</article>
 
-							<article class="product">
+							<article class="product" data-cat="womens">
 								<a href="#" class="product__overlay">add to cart</a>
-								<div class="product__pic">
-									<a href="#"><img src="img/feature-item3.png" class="product__img" alt=""></a>
-								</div>
+								<a href="#" class="product__pic">
+									<img src="img/feature-item3.png" class="product__img" alt="">
+								</a>
 								<div class="product__descr">
 									<div class="product__subtitle">
 										<a href="#" class="section-subtitle">Jacket Of Prince</a>
@@ -434,11 +421,11 @@
 								</div>
 							</article>
 
-							<article class="product">
+							<article class="product" data-cat="mens">
 								<a href="#" class="product__overlay">add to cart</a>
-								<div class="product__pic">
-									<a href="#"><img src="img/product/product-item3.png" class="product__img" alt=""></a>
-								</div>
+								<a href="#" class="product__pic">
+									<img src="img/product/product-item3.png" class="product__img" alt="">
+								</a>
 								<div class="product__descr">
 									<div class="product__subtitle">
 										<a href="#" class="section-subtitle">Jacket Of Prince</a>
@@ -452,11 +439,11 @@
 								</div>
 							</article>
 
-							<article class="product">
+							<article class="product" data-cat="kids">
 								<a href="#" class="product__overlay">add to cart</a>
-								<div class="product__pic">
-									<a href="#"><img src="img/product/product-item4.png" class="product__img" alt=""></a>
-								</div>
+								<a href="#" class="product__pic">
+									<img src="img/product/product-item4.png" class="product__img" alt="">
+								</a>
 								<div class="product__descr">
 									<div class="product__subtitle">
 										<a href="#" class="section-subtitle">Jacket Of Prince</a>
@@ -470,11 +457,11 @@
 								</div>
 							</article>
 
-							<article class="product">
+							<article class="product" data-cat="womens">
 								<a href="#" class="product__overlay">add to cart</a>
-								<div class="product__pic">
-									<a href="#"><img src="img/product/product-item5.png" class="product__img" alt=""></a>
-								</div>
+								<a href="#" class="product__pic">
+									<img src="img/product/product-item5.png" class="product__img" alt="">
+								</a>
 								<div class="product__descr">
 									<div class="product__subtitle">
 										<a href="#" class="section-subtitle">Jacket Of Prince</a>
@@ -488,11 +475,119 @@
 								</div>
 							</article>
 
-							<article class="product">
+							<article class="product" data-cat="kids">
 								<a href="#" class="product__overlay">add to cart</a>
-								<div class="product__pic">
-									<a href="#"><img src="img/product/product-item6.png" class="product__img" alt=""></a>
+								<a href="#" class="product__pic">
+									<img src="img/product/product-item6.png" class="product__img" alt="">
+								</a>
+								<div class="product__descr">
+									<div class="product__subtitle">
+										<a href="#" class="section-subtitle">Jacket Of Prince</a>
+									</div>
+									<p class="section-descr">
+										Valo lagla kinen na kinla poth mapen
+									</p>
+									<div class="section-price product__price">
+										$28
+									</div>
 								</div>
+							</article>
+
+							<article class="product" data-cat="kids">
+								<a href="#" class="product__overlay">add to cart</a>
+								<a href="#" class="product__pic">
+									<img src="img/product/kids-3.png" class="product__img" alt="">
+								</a>
+								<div class="product__descr">
+									<div class="product__subtitle">
+										<a href="#" class="section-subtitle">Jacket Of Prince</a>
+									</div>
+									<p class="section-descr">
+										Valo lagla kinen na kinla poth mapen
+									</p>
+									<div class="section-price product__price">
+										$28
+									</div>
+								</div>
+							</article>
+
+							<article class="product" data-cat="kids">
+								<a href="#" class="product__overlay">add to cart</a>
+								<a href="#" class="product__pic">
+									<img src="img/product/kids-4.png" class="product__img" alt="">
+								</a>
+								<div class="product__descr">
+									<div class="product__subtitle">
+										<a href="#" class="section-subtitle">Jacket Of Prince</a>
+									</div>
+									<p class="section-descr">
+										Valo lagla kinen na kinla poth mapen
+									</p>
+									<div class="section-price product__price">
+										$28
+									</div>
+								</div>
+							</article>
+
+							<article class="product" data-cat="womens">
+								<a href="#" class="product__overlay">add to cart</a>
+								<a href="#" class="product__pic">
+									<img src="img/product/women-3.png" class="product__img" alt="">
+								</a>
+								<div class="product__descr">
+									<div class="product__subtitle">
+										<a href="#" class="section-subtitle">Jacket Of Prince</a>
+									</div>
+									<p class="section-descr">
+										Valo lagla kinen na kinla poth mapen
+									</p>
+									<div class="section-price product__price">
+										$28
+									</div>
+								</div>
+							</article>
+
+							<article class="product" data-cat="womens">
+								<a href="#" class="product__overlay">add to cart</a>
+								<a href="#" class="product__pic">
+									<img src="img/product/women-4.png" class="product__img" alt="">
+								</a>
+								<div class="product__descr">
+									<div class="product__subtitle">
+										<a href="#" class="section-subtitle">Jacket Of Prince</a>
+									</div>
+									<p class="section-descr">
+										Valo lagla kinen na kinla poth mapen
+									</p>
+									<div class="section-price product__price">
+										$28
+									</div>
+								</div>
+							</article>
+
+							<article class="product" data-cat="mens">
+								<a href="#" class="product__overlay">add to cart</a>
+								<a href="#" class="product__pic">
+									<img src="img/product/men-3.png" class="product__img" alt="">
+								</a>
+								<div class="product__descr">
+									<div class="product__subtitle">
+										<a href="#" class="section-subtitle">Jacket Of Prince</a>
+									</div>
+									<p class="section-descr">
+										Valo lagla kinen na kinla poth mapen
+									</p>
+									<div class="section-price product__price">
+										$28
+									</div>
+								</div>
+							</article>
+
+							<article class="product" data-cat="mens">
+								<a href="#" class="product__overlay">add to cart</a>
+								<a href="#" class="product__pic">
+									<img src="img/product/men-4.png" class="product__img" alt="">
+								</a>
 								<div class="product__descr">
 									<div class="product__subtitle">
 										<a href="#" class="section-subtitle">Jacket Of Prince</a>
