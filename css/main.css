@@ -406,20 +406,19 @@ footer {
           justify-content: center;
   margin-bottom: 5.5rem; }
 
-.categories li:not(:last-child) {
-  margin-right: 7.5rem; }
-  @media screen and (max-width: 576px) {
-    .categories li:not(:last-child) {
-      margin-right: 2.5rem; } }
-
-.categories li a {
+.categories a {
   color: #64759f;
   font-size: 1.5rem;
   font-weight: 500;
   text-transform: uppercase; }
+  .categories a:not(:last-child) {
+    margin-right: 7.5rem; }
+    @media screen and (max-width: 576px) {
+      .categories a:not(:last-child) {
+        margin-right: 2.5rem; } }
 
-.categories li .active,
-.categories li a:hover {
+.categories .active,
+.categories a:hover {
   color: #43537b; }
 
 .products-list {
@@ -433,8 +432,7 @@ footer {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 3.6rem; }
+          justify-content: space-between; }
   @media screen and (max-width: 576px) {
     .products-list {
       margin-bottom: 0; } }
@@ -455,11 +453,6 @@ footer {
   text-align: left;
   width: -webkit-calc(33.3% - 2rem);
   width: calc(33.3% - 2rem); }
-  .product:nth-last-child(1), .product:nth-last-child(2), .product:nth-last-child(3) {
-    margin-bottom: 0; }
-    @media screen and (max-width: 576px) {
-      .product:nth-last-child(1), .product:nth-last-child(2), .product:nth-last-child(3) {
-        margin-bottom: 3rem; } }
   .product:hover {
     background-color: rgba(100, 117, 159, 0.4);
     -webkit-transition: all 0.4s;
@@ -495,16 +488,14 @@ footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
   height: 24rem;
-  text-align: center; }
+  overflow: hidden; }
+
+.product__pic img {
+  display: block;
+  margin: auto;
+  max-height: 100%;
+  width: auto; }
 
 .product__descr {
   margin-top: auto;
