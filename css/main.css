@@ -389,7 +389,7 @@ footer {
   width: 1.1rem; }
 
 .products {
-  padding: 5rem 0 5.5rem;
+  padding: 5rem 0 8.5rem;
   text-align: center; }
 
 .products-descr {
@@ -421,7 +421,10 @@ footer {
 .categories a:hover {
   color: #43537b; }
 
-.products-list {
+.products-list-all,
+.products-list-mens,
+.products-list-womens,
+.products-list-kids {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -432,9 +435,13 @@ footer {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  position: relative; }
   @media screen and (max-width: 576px) {
-    .products-list {
+    .products-list-all,
+    .products-list-mens,
+    .products-list-womens,
+    .products-list-kids {
       margin-bottom: 0; } }
 
 .product {
@@ -489,6 +496,7 @@ footer {
   display: -ms-flexbox;
   display: flex;
   height: 24rem;
+  margin-bottom: 1.5rem;
   overflow: hidden; }
 
 .product__pic img {
@@ -508,11 +516,16 @@ footer {
   border: 1px solid #8791a9;
   -webkit-border-radius: 2rem;
           border-radius: 2rem;
-  display: inline-block;
+  display: block;
   color: #555f76;
   font-size: 1.5rem;
   font-weight: 500;
   padding: 1rem 6.4rem;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  bottom: -4.5rem;
+  margin-left: -85px;
   text-transform: uppercase; }
   .products-btn:hover {
     border-color: #000;

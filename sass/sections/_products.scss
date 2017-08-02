@@ -1,5 +1,5 @@
 .products {
-	padding: 5rem 0 5.5rem;
+	padding: 5rem 0 8.5rem;
 	text-align: center;
 }
 
@@ -31,10 +31,14 @@
 	color: $title-font;
 }
 
-.products-list {
+.products-list-all,
+.products-list-mens,
+.products-list-womens,
+.products-list-kids {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+    position: relative;
 	@include phone {
 		margin-bottom: 0;
 	}
@@ -84,10 +88,8 @@
 
 .product__pic {
 	display: flex;
-	//justify-content: center;
-	//align-items: center;
 	height: 24rem;
-	//text-align: center;
+    margin-bottom: 1.5rem;
 	overflow: hidden;
 }
 
@@ -110,11 +112,16 @@
 .products-btn {
 	border: 1px solid #8791a9;
 	border-radius: 2rem;
-	display: inline-block;
+	display: block;
 	color: $gray;
 	font-size: 1.5rem;
 	font-weight: $medium;
 	padding: 1rem 6.4rem;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    bottom: -4.5rem;
+    margin-left: -85px;
 	text-transform: uppercase;
 	&:hover {
 		border-color: $black;

@@ -27,6 +27,7 @@ var Filter = {
 	sort: function(items) {
 		items.fadeIn(500);
 		$('.products-list').find('.product').not(items).hide();
+		$('.products-list').find('.products-btn').not(items).hide();
 	},
 	//Показывает все товары
 	showAll: function(items) {
@@ -34,20 +35,21 @@ var Filter = {
 	},
 	//Определяет выбор категории
 	doSort: function() {
+		$(window).on('load', function() {
+			$('.product, .products-btn').hide();
+			$('[data-cat = all]').show();
+		});
 		$('a', '.categories').on('click', function(event) {
 
 			var $a = $(this);
-			if (!$a.is('.all')) {
 
-				var items = $('.product[data-cat=' + $a.data('cat') + ']', '.products-list');
+			//var items = $('.product[data-cat=' + $a.data('cat') + ']', '.products-list');
 
-				Filter.sort(items);
+			var items = $('[data-cat=' + $a.data('cat') + ']', '.products-list');
 
-			} else {
+			//var button = $('.products-btn[data-cat=' + $a.data('cat') + ']', '.products-list');
 
-				Filter.showAll($('.product', '.products-list'));
-
-			}
+			Filter.sort(items);
 
 			//Добавляем категории вид активной ссылки
 			$('.categories').find('a.active').removeClass('active');
@@ -71,4 +73,39 @@ $('.phone-menu').on('click', function() {
         }
     });
 
+});
+
+//Ajax load products
+
+$(function(){
+
+	$('.products-btn').on('click', function(event) {
+		var tab = $(this);
+		var cat = $('.categories').find('a.active');
+		var attribute = cat.attr('data-cat');
+
+		$.ajax({
+			url: attribute + '.json',
+			dataType: 'json',
+			success: function(data) {
+				for (var i = 0; i < data.length; i++) {
+					var currentItem = data[i];
+					$('.products-list-' + attribute).append('<article class="product product-ajax" data-cat="' + currentItem.category + '">' +
+						'<a href="#" class="product__overlay">add to cart</a>' +
+						'<a href="#" class="product__pic"><img src=\"' + currentItem.img + '\" class="product__img" alt=""></a>' +
+						'<div class="product__descr">' +
+						'<div class="product__subtitle">' +
+						'<a href="#" class="section-subtitle">' + currentItem.name + '</a>' +
+						'</div>' +
+						'<p class="section-descr">' + currentItem.description + '</p>' +
+						'<div class="section-price product__price">' + currentItem.price + '</div>' +
+						'</div></article>');
+					if (i == data.length - 1) {
+						$('.products-list-' + attribute + ' .products-btn').remove();
+					}
+				}
+			}
+		});
+		return false;
+	});
 });
