@@ -78,7 +78,6 @@ $('.phone-menu').on('click', function() {
 $(function(){
 
 	$('.products-btn').on('click', function(event) {
-		var tab = $(this);
 		var cat = $('.categories').find('a.active');
 		var attribute = cat.attr('data-cat');
 
@@ -100,7 +99,7 @@ $(function(){
 						'<div class="section-price product__price">' + currentItem.price + '</div>' +
 						'</div></article>');
 					if (i === data.length - 1) {
-						$(category + attribute + ' .' + tab[0].className).remove();
+						$(event.target).remove();
 					}
 				}
 			}
