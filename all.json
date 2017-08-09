@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": "25",
         "name": "all blue jacket",
         "description": "lorem ipsum dolor sit amet",
         "img": "img/product/kids-3.png",
@@ -8,7 +8,7 @@
         "category": "all"
     },
     {
-        "id": "2",
+        "id": "26",
         "name": "all dark-blue jacket",
         "description": "lorem ipsum dolor sit amet",
         "img": "img/product/kids-4.png",
@@ -16,7 +16,7 @@
         "category": "all"
     },
     {
-        "id": "3",
+        "id": "27",
         "name": "all pink jacket",
         "description": "lorem ipsum dolor sit amet",
         "img": "img/product/women-3.png",
@@ -24,7 +24,7 @@
         "category": "all"
     },
     {
-        "id": "4",
+        "id": "28",
         "name": "all light-blue jacket",
         "description": "lorem ipsum dolor sit amet",
         "img": "img/product/women-4.png",
@@ -32,7 +32,7 @@
         "category": "all"
     },
     {
-        "id": "5",
+        "id": "29",
         "name": "all orange snickers",
         "description": "lorem ipsum dolor sit amet",
         "img": "img/product/men-3.png",
@@ -40,7 +40,7 @@
         "category": "all"
     },
     {
-        "id": "6",
+        "id": "30",
         "name": "all dark-blue snickers",
         "description": "lorem ipsum dolor sit amet",
         "img": "img/product/men-4.png",
