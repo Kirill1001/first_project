@@ -112,65 +112,132 @@ $(function(){
  * Корзина товаров
  * @type {{cartProd: {}, checkCart: cart.checkCart, showCart: cart.showCart, timerForClearCart: cart.timerForClearCart, addToCart: cart.addToCart}}
  */
-var cart = {
+// var cart = {
+//
+//     /**
+// 	 * Создаем корзину товаров
+//      */
+// 	cartProd: {},
+//     timer: null,
+//
+//     /**
+// 	 * Проверяет localStorage на наличие добавленных  товаров
+//      */
+//     checkCart: function(){
+//         if (localStorage.getItem('cart') !== null) {
+//             cart.cartProd = JSON.parse(localStorage.getItem('cart'));
+//         }
+//     },
+//
+//     /**
+// 	 * Показывает колличество товаров в корзине
+//      */
+//     showCart: function(){
+//         var num = 0;
+//         for (var prod in cart.cartProd) {
+//             num += cart.cartProd[prod];
+//         }
+//         $('.account__badge').text(num);
+//     },
+//
+//     /**
+// 	 * устанавливаем таймер и очищаем корзину через час
+//      */
+//     clearCart: function(){
+//     	clearTimeout(cart.timer);
+//     	cart.timer = setTimeout(function() {
+//             localStorage.removeItem('cart');
+//             $('.account__badge').text('0');
+//             cart.cartProd = {};
+//         }, 3600000);
+//     },
+//
+//     /**
+// 	 * Добавляем товар в корзину
+//      * @returns {boolean}
+//      */
+//     addToCart: function(){
+//             var idProduct = $('.product__overlay').attr('data-id');
+//             if (cart.cartProd[idProduct] === undefined) {
+//                 cart.cartProd[idProduct] = 1;
+//             } else {
+//                 cart.cartProd[idProduct]++;
+//             }
+//             localStorage.setItem('cart', JSON.stringify(cart.cartProd));
+//             cart.showCart();
+//             return false;
+//     }
+// };
+// $('document').ready(function(){
+// 	var allProducts = $('.products-list');
+//     cart.checkCart();
+//     allProducts.on('click', '.product__overlay', cart.addToCart);
+//     allProducts.on('click', '.product__overlay', cart.clearCart);
+// });
+class Cart {
 
-    /**
-	 * Создаем корзину товаров
-     */
-	cartProd: {},
-    timer: null,
+	constructor() {
+		this.cartProd = {};
+		this.timer = null;
+	}
 
     /**
 	 * Проверяет localStorage на наличие добавленных  товаров
      */
-    checkCart: function(){
-        if (localStorage.getItem('cart') !== null) {
-            cart.cartProd = JSON.parse(localStorage.getItem('cart'));
-        }
-    },
+    checkCart() {
+		if (localStorage.getItem('cart') !== null) {
+			this.cartProd = JSON.parse(localStorage.getItem('cart'));
+		}
+	}
 
     /**
 	 * Показывает колличество товаров в корзине
-     */
-    showCart: function(){
+	 */
+    showCart() {
         var num = 0;
-        for (var prod in cart.cartProd) {
-            num += cart.cartProd[prod];
+        for (var prod in this.cartProd) {
+            num += this.cartProd[prod];
         }
         $('.account__badge').text(num);
-    },
+    }
 
     /**
 	 * устанавливаем таймер и очищаем корзину через час
-     */
-    clearCart: function(){
-    	clearTimeout(cart.timer);
-    	cart.timer = setTimeout(function() {
+	 */
+    clearCart() {
+    	clearTimeout(this.timer);
+    	this.timer = setTimeout(function() {
             localStorage.removeItem('cart');
             $('.account__badge').text('0');
-            cart.cartProd = {};
-        }, 3600000);
-    },
+            this.cartProd = {};
+            console.log(this.cartProd);
+        }, 8000);
+    }
 
     /**
 	 * Добавляем товар в корзину
-     * @returns {boolean}
-     */
-    addToCart: function(){
-            var idProduct = $('.product__overlay').attr('data-id');
-            if (cart.cartProd[idProduct] === undefined) {
-                cart.cartProd[idProduct] = 1;
-            } else {
-                cart.cartProd[idProduct]++;
-            }
-            localStorage.setItem('cart', JSON.stringify(cart.cartProd));
-            cart.showCart();
-            return false;
+	 * @returns {boolean}
+	 */
+    addToCart() {
+		var idProduct = $('.product__overlay').attr('data-id');
+		if (this.cartProd[idProduct] === undefined) {
+			this.cartProd[idProduct] = 1;
+		} else {
+			this.cartProd[idProduct]++;
+		}
+		localStorage.setItem('cart', JSON.stringify(this.cartProd));
+		this.showCart();
+		return false;
     }
-};
-$('document').ready(function(){
-	var allProducts = $('.products-list');
+
+}
+
+$('document').ready(function() {
+    var cart = new Cart(),
+	    contextAdd = cart.addToCart.bind(cart),
+        contextClear = cart.clearCart.bind(cart);
     cart.checkCart();
-    allProducts.on('click', '.product__overlay', cart.addToCart);
-    allProducts.on('click', '.product__overlay', cart.clearCart);
+    var allProducts = $('.products-list');
+    allProducts.on('click', '.product__overlay', contextAdd);
+    allProducts.on('click', '.product__overlay', contextClear);
 });
