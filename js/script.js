@@ -118,10 +118,10 @@ class Cart {
 	}
 
     /**
-	 * Проверяет localStorage на наличие добавленных  товаров
+	 * Возврашает колличество товаров из localStorage
      */
     getCart() {
-        var cartCount = 0;
+        let cartCount = 0;
         if (localStorage.getItem('cart') !== null) {
             cartCount = JSON.parse(localStorage.getItem('cart'));
         }
@@ -132,19 +132,19 @@ class Cart {
 	 * Показывает колличество товаров в корзине
 	 */
     showCart() {
-        var num = this.getCart();
+        let num = this.getCart();
         $('.account__badge').text(num);
     }
 
     /**
 	 * устанавливаем таймер и очищаем корзину через час
 	 */
-    clearCart() {
+    setClearCart() {
     	clearTimeout(this.timer);
     	this.timer = setTimeout(function() {
             localStorage.removeItem('cart');
             $('.account__badge').text('0');
-        }, 8000);
+        }, 3600000);
     }
 
     /**
@@ -152,8 +152,8 @@ class Cart {
 	 * @returns {boolean}
 	 */
     addToCart() {
-		var idProduct = $('.product__overlay').attr('data-id');
-		var count = JSON.parse(localStorage.getItem('cart'));
+		let idProduct = $('.product__overlay').attr('data-id');
+		let count = JSON.parse(localStorage.getItem('cart'));
 		if (count === 0) {
 			count = 1;
 		} else {
@@ -167,9 +167,9 @@ class Cart {
 }
 
 $('document').ready(function() {
-    var cart = new Cart();
+    let cart = new Cart();
     cart.showCart();
-    var allProducts = $('.products-list');
+    const allProducts = $('.products-list');
     allProducts.on('click', '.product__overlay', cart.addToCart.bind(cart));
-    allProducts.on('click', '.product__overlay', cart.clearCart.bind(cart));
+    allProducts.on('click', '.product__overlay', cart.setClearCart.bind(cart));
 });
